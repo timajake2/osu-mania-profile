@@ -1,0 +1,34 @@
+{
+  "status": "ok",
+  "source": "public_profile_snapshot",
+  "updated_at": "2026-10-15T12:57:47Z",
+  "user": {
+    "id": 32048979,
+    "username": "timajake2",
+    "statistics": {
+      "global_rank": 9313,
+      "country_rank": 303,
+      "pp": 9124,
+      "accuracy_pct": 96.49,
+      "play_count": 17494,
+      "play_time": 1354920,
+      "ranked_score": 1190463773,
+      "total_score": 6472874546,
+      "total_hits": 17251486,
+      "maximum_combo": 7707,
+      "level": {"current": 94, "progress": 58},
+      "replays_watched_by_others": 2,
+      "grade_counts": null
+    },
+    "rank_history": [],
+    "medals_count": 48
+  },
+  "best": [
+    {"artist":"morethanahalf & typeMARS","title":"Kemilau Fana feat. Altair Aquila & Mariela Riona","version":"[4K] Menuliskan Takdir di Atas Abu Keraguan","accuracy":95.42,"pp":538,"rank":null,"beatmap_id":null,"ended_at":null,"mods":[]},
+    {"artist":"Halv vs. kuro","title":"Evreka","version":"[4K] Khrysos","accuracy":96.57,"pp":528,"rank":null,"beatmap_id":null,"ended_at":null,"mods":[]},
+    {"artist":"Xyris","title":"Beyond the Edge (feat. Hanakuma Chifuyu)","version":"[4K] To The Garden","accuracy":94.78,"pp":489,"rank":null,"beatmap_id":null,"ended_at":null,"mods":[]},
+    {"artist":"takehirotei as Infinite Limit","title":"C://YOU NEX-TIME","version":"[4K] Return, Departure, Carry on.","accuracy":96.40,"pp":486,"rank":null,"beatmap_id":null,"ended_at":null,"mods":[]},
+    {"artist":"Camellia","title":"FINAL BLENDERMAN APPEARED. (feat. RichaadEB)","version":"[4K] Apocalyptic Confrontation: The Final Showdown","accuracy":95.14,"pp":461,"rank":null,"beatmap_id":null,"ended_at":null,"mods":[]}
+  ],
+  "recent": []
+}
