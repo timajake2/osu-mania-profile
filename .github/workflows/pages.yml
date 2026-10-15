@@ -1,0 +1,62 @@
+name: Обновить osu!mania и опубликовать сайт
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Получить проект
+        uses: actions/checkout@v4
+
+      - name: Установить Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Обновить данные osu!mania
+        env:
+          OSU_CLIENT_ID: ${{ secrets.OSU_CLIENT_ID }}
+          OSU_CLIENT_SECRET: ${{ secrets.OSU_CLIENT_SECRET }}
+        run: |
+          if [ -n "$OSU_CLIENT_ID" ] && [ -n "$OSU_CLIENT_SECRET" ]; then
+            python scripts/fetch_osu.py
+          else
+            echo "Секреты osu! не настроены; публикуем датированный снимок публичного профиля."
+          fi
+
+      - name: Собрать статический сайт
+        run: |
+          mkdir -p dist/assets dist/data
+          cp index.html styles.css app.js .nojekyll dist/
+          cp assets/avatar.png assets/banner.jpg dist/assets/
+          cp data/stats.json dist/data/
+
+      - name: Настроить GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Загрузить сайт
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Опубликовать
+        id: deployment
+        uses: actions/deploy-pages@v4
