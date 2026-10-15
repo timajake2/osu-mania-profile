@@ -1,6 +1,20 @@
 # timajake2 · osu!mania
 
+## English
+
+This is a bilingual osu!mania profile website for GitHub Pages. Use the **RU / EN** switch in the header; the selected language is saved in your browser. Share the [English version](https://timajake2.github.io/osu-mania-profile/?lang=en) directly. Visitors whose browser language is English see English automatically unless they have already chosen a language.
+
+The site shows osu!mania stats, global rank history, best and recent plays, and verified Alpha, Beta, and Gamma Dan On Rates clears. The clear counter is **03 / 05**, leaving room for Delta and Epsilon.
+
+To publish a copy, upload the project files to the root of a GitHub repository, including the hidden `.github` folder. Use a `main` branch and set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The workflow publishes the initial public snapshot even before API credentials are added.
+
+For automatic updates, register an OAuth application in [osu! account settings](https://osu.ppy.sh/home/account/edit). Add its client ID and client secret under **Settings → Secrets and variables → Actions** as `OSU_CLIENT_ID` and `OSU_CLIENT_SECRET`. Then run the Pages workflow from the **Actions** tab. It refreshes public profile data about every six hours. Credentials stay in GitHub Actions and are never shipped to the browser. Dan clears are maintained manually because osu! API v2 does not expose them as a separate profile field.
+
+## Русский
+
 Готовый статический сайт для GitHub Pages. Лавандово-розовый дизайн повторяет настроение приложенного скриншота профиля; аватар и баннер взяты из приложенных изображений. На странице есть статистика osu!mania, история мирового рейтинга, лучшие и недавние результаты, а также прохождения Alpha / Beta / Gamma Dan On Rates со ссылками на подтверждения.
+
+Для переключения языка используйте кнопки **RU / EN** в шапке. Выбор сохраняется в браузере. Английскую версию можно открыть напрямую по адресу `?lang=en`; у новых посетителей с английским языком браузера она включается автоматически.
 
 ## Публикация на GitHub Pages
 
